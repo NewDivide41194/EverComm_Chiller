@@ -18,14 +18,12 @@ const LeftSideBar = () => {
                 <i className="fa fa-list-ul" style={{color: `${Colors.text1}`,cursor: 'pointer',fontSize:'16pt',padding:'10pt' }} />
                 {collapse &&
                     <div className='w-100' style={{color:`${Colors.text2}`}}>
-                        <Link to={RouthPath.Dashboard} className='d-flex flex-row justify-content-between p-3' style={{ color: `${Colors.text2}`,cursor: 'pointer', borderBottom:`1px solid ${Colors.text2}`,textDecoration:'none' }}>Dashboard<i class="fa fa-home p-1" style={{ fontSize: '14pt' }}/></Link>
+                        <Link to={RouthPath.Dashboard} className='d-flex flex-row justify-content-between p-3' style={{ color: `${Colors.text1}`,cursor: 'pointer', borderBottom:`1px solid ${Colors.text2}`,textDecoration:'none',borderLeft:`3px solid ${Colors.text3}` }}>Dashboard<i class="fa fa-home p-1" style={{ fontSize: '14pt' }}/></Link>
                         <div className='p-3' style={{color: `${Colors.text2}`, cursor: 'pointer',borderBottom:`1px solid ${Colors.text2}`  }}>Chiller1</div>
                         <div className='p-3' style={{color: `${Colors.text2}`, cursor: 'pointer',borderBottom:`1px solid ${Colors.text2}` }}>Chiller Utilization</div>
                         <div className='p-3' style={{color: `${Colors.text2}`, cursor: 'pointer' }}>Evaporator Mapping</div>
-
                     </div>}
             </div>
-
         </div>
 
     )

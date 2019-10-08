@@ -1,22 +1,16 @@
 import React from 'react'
-import {Switch,Route,withRouter} from 'react-router-dom'
-import Login from '../features/Login/login';
-import LeftSideBar from '../features/home/leftSideBar'
-import * as RoutePath from './routePath'
-import NavBar from '../features/home/navbar';
-
+import {Switch,Route,withRouter,Redirect} from 'react-router-dom'
+import Login from '../features/Login/login'
+import DashboardContainer from '../features/dashboard/dashboardContainer'
+import NavBar from '../features/home/navbar'
 
 const Router = () => {
     return (
-        <div>
-            <NavBar/>
-            <LeftSideBar/>
-            Hello
-            {/* <Switch>
-                <Route path={RoutePath.Home} component={Login}></Route>
-                
-            </Switch> */}
-        </div>
+            <Switch>
+                <Route path='/' component={Login}/>
+                <Route path='/dashboard' component={DashboardContainer}/>
+                <Redirect to='/'/>
+            </Switch>
     )
 }
 

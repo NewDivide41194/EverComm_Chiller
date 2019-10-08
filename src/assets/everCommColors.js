@@ -1,4 +1,3 @@
-export const background = 'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))';
 export const text1 = 'rgb(255,255,255)';
 export const text2 = 'rgba(255, 255, 255, 0.3)';
 export const text3 = 'rgb(31, 169, 255)';

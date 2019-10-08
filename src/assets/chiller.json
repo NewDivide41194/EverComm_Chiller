@@ -1,0 +1,11 @@
+{
+    "id":22,
+    "name":"Chiller1",
+    "efficiency":981.26,
+    "power":58.34,
+    "entering":2.51,
+    "leaving":0.31,
+    "dataLoss":false,
+    "viewChiller":"",
+    "dataLossText":""
+}
