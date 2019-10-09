@@ -8,6 +8,10 @@ const NavBar = () => {
     const [Tab1, setTab1] = useState(true)
     const [Tab2, setTab2] = useState(false)
 
+    const [hov1, sethov1] = useState(true)
+    const [hov2, sethov2] = useState(true)
+
+
     const clickTab1 = () => {
         setTab1(true)
         setTab2(false)
@@ -26,8 +30,12 @@ const NavBar = () => {
         setNoti(false)
     }
 
+    function MouseOver1() {sethov1(!hov1)}
+    function MouseOver2() {sethov2(!hov2)}
+
+
     return (
-        <div className="d-flex flex-row justify-content-between px-4 py-4">
+        <div className="d-flex flex-row justify-content-between px-4 py-3 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
             <div className='row font-weight-bold text-light'>
                 <img src={process.env.PUBLIC_URL + '/icons/everCommLogo.png'} style={{ height: 35, marginRight: '30px' }} alt='logo' />
                 <div onClick={clickTab1} style={{
@@ -38,33 +46,39 @@ const NavBar = () => {
             </div>
 
             <div className='d-flex'>
-                <div className="py-2 px-4" style={{ cursor: 'pointer' }}>
-                    <i className="fa fa-bell" style={{ color: 'white', fontSize: '14pt' }} onClick={clickNoti} />
+                <div className="px-2" style={{ cursor: 'pointer' }}>
+                    <div style={{ backgroundColor: `${hov1 ? 'rgba(201, 76, 76, 0)' : `${Colors.contanierBg}`}`, borderRadius: 8,padding:14 }} onMouseOver={MouseOver1} onMouseOut={MouseOver1} onClick={clickNoti} >
+                        <i className="fa fa-bell" style={{ color: 'white', fontSize: '14pt' }} />
+                    </div>
                     {noti &&
                         <div className='mt-2' style={{ width: '250px', background: 'white', fontSize: '12pt', position: 'absolute', borderRadius: 10, marginLeft: '-200px', zIndex: 3 }}>
-                            <Link className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Chiller 1 has stopped due to high temperature</Link>
-                            <Link className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Change Plant</Link>
-                            <Link className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Switch to Light Mode</Link>
-                            <Link className="list-group-item" style={{ cursor: 'pointer', textDecoration: 'none' }}>See All Alerts</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Chiller 1 has stopped due to high temperature</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Change Plant</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Switch to Light Mode</Link>
+                            <Link to='#' className="list-group-item" style={{ cursor: 'pointer', textDecoration: 'none' }}>See All Alerts</Link>
                         </div>}
                 </div>
-                <div className="pt-2" style={{ cursor: 'pointer' }}>
+                <div>
+                     <div style={{ cursor: 'pointer',height: 50, backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : `${Colors.contanierBg}`}`, borderRadius: 8,padding:12 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
                     {window.innerWidth <= 800 ?
-                        <i className="fa fa-user" style={{ color: 'white', fontSize: '16pt' }} onClick={clickprofile} />
-                        : <span style={{ color: 'white', fontWeight: 'bold', paddingTop: '-5px' }} onClick={clickprofile}>Super User Kr<i class="fa fa-sort-down px-1"></i></span>
+                     <i className="fa fa-user" style={{ color: 'white', fontSize: '16pt' }}/>
+                        : <span style={{ color: 'white', fontWeight: 'bold' }}>Super User Kr<i className="fa fa-sort-down"/></span>
+                       
                     }
+                    </div>
+
                     {profile &&
                         <div className='mt-2' style={{ width: '250px', background: 'white', fontSize: '12pt', position: 'absolute', borderRadius: 10, marginLeft: '-250px', zIndex: 2 }}>
-                            <Link className="list-group-item list-group-item-action" >Chiller 1 has stopped due to high temperature</Link>
-                            <Link className="list-group-item list-group-item-action" >Change Plant</Link>
-                            <Link className="list-group-item list-group-item-action" >Switch to Light Mode</Link>
-                            <Link className="list-group-item list-group-item-action" >Logout</Link>
-                        </div>}
+                            <Link to='#' className="list-group-item list-group-item-action" >Chiller 1 has stopped due to high temperature</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" >Change Plant</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" >Switch to Light Mode</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" >Logout</Link>
+                        </div>} 
+                </div>
+              
                 </div>
 
-
             </div>
-        </div>
     )
 }
 export default NavBar

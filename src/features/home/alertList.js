@@ -2,9 +2,10 @@ import React from 'react'
 import * as Colors from '../../assets/everCommColors'
 import {Link} from 'react-router-dom'
 
-const CriticalAlerts = () => {
+const CriticalAlerts = (props) => {
+    const chillerName=props.chillerName
     return (
-         <div className='d-flex flex-column col-lg-3'>
+         <div className='d-flex flex-column'>
             <div className='d-flex flex-row justify-content-between text-light p-2' style={{ borderBottom: `1px solid ${Colors.text2}`, fontSize: '20px' }}>
                 <span>
                     Critical Alerts
@@ -25,20 +26,20 @@ const CriticalAlerts = () => {
             </div>
             <div className='text-light py-2'>
             <i className="fa fa-circle px-2" style={{ fontSize: '12px', color: 'red' }}/>
-                Chiller1 has stopped due to high temperature                                
+                {chillerName} has stopped due to high temperature                                
          </div>
          <div className='text-light py-2'>
             <i className="fa fa-circle px-2" style={{ fontSize: '12px', color: 'yellow' }}/>
-                Chiller1 has stopped due to high temperature                                
+                {chillerName} has stopped due to high temperature                                
          </div>
          <div className='py-2' style={{ borderBottom: `1px solid ${Colors.text2}`, fontSize: '18px' }}>
-         <Link  className='text-decoration-none' style={{color:`${Colors.text3}`}}>See all Alerts</Link>
+         <Link to='#' className='text-decoration-none' style={{color:`${Colors.text3}`}}>See all Alerts</Link>
          </div>
          <div className='p-2' style={{ fontSize: '20px',color:`${Colors.text1}`}}>
                     Plant Reports
             </div>
             <div className='py-2' style={{ borderBottom: `1px solid ${Colors.text2}`, fontSize: '18px' }}>
-         <Link  className='text-decoration-none' style={{color:`${Colors.text3}`}}><i className="fa fa-download px-2" style={{ fontSize: '18px', color: `${Colors.on}` }}  />Download Analytics Report</Link>
+         <Link to='#' className='text-decoration-none' style={{color:`${Colors.text3}`}}><i className="fa fa-download px-2" style={{ fontSize: '18px', color: `${Colors.on}` }}  />Download Analytics Report</Link>
          </div>
         </div>     
     )

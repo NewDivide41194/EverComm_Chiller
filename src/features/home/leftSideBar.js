@@ -8,13 +8,11 @@ const LeftSideBar = () => {
     const [collapse, setCollapse] = useState(false)
 
     const isCollapse = () => { setCollapse(!collapse) }
-    console.log(collapse);
 
     return (
-        <div className='col-lg-2 pt-2'>
-
+        <div className='m-4'>
             <div onClick={isCollapse}
-                style={{ background: `${Colors.contanierBg}`, width: `${collapse === false ? '50px' : '100%'}`, height: '100%', borderRadius: '10px', boxShadow: 'rgba(170, 208, 253, 0.133) 1px 1px 4px 2px' }}>
+                style={{ background: `${Colors.contanierBg}`, width: `${collapse === false ? '50px' : '100%'}`, borderRadius: '10px', boxShadow: 'rgba(170, 208, 253, 0.133) 1px 1px 4px 2px' }}>
                 <i className="fa fa-list-ul" style={{color: `${Colors.text1}`,cursor: 'pointer',fontSize:'16pt',padding:'10pt' }} />
                 {collapse &&
                     <div className='w-100' style={{color:`${Colors.text2}`}}>
