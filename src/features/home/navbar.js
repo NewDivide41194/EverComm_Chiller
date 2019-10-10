@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import * as Colors from '../../assets/everCommColors'
 import { Link } from 'react-router-dom'
+import EverCommLogo from '../../assets/icons/everCommLogo.png'
+import * as RoutePath from '../../network/routePath'
+import { EverCommLink } from '../../elements/everccommLabel'
 
-const NavBar = () => {
+const NavBar = (props) => {
     const [noti, setNoti] = useState(false)
     const [profile, setProfile] = useState(false)
     const [Tab1, setTab1] = useState(true)
@@ -30,6 +33,7 @@ const NavBar = () => {
         setNoti(false)
     }
 
+
     function MouseOver1() {sethov1(!hov1)}
     function MouseOver2() {sethov2(!hov2)}
 
@@ -37,11 +41,14 @@ const NavBar = () => {
     return (
         <div className="d-flex flex-row justify-content-between px-4 py-3 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
             <div className='row font-weight-bold text-light'>
-                <img src={process.env.PUBLIC_URL + '/icons/everCommLogo.png'} style={{ height: 35, marginRight: '30px' }} alt='logo' />
+                <Link to={`/${RoutePath.Dashboard}`}><img src={EverCommLogo} style={{ height: 35, marginRight: '30px' }} alt='logo'/></Link>
                 <div onClick={clickTab1} style={{
-                    height: '30px', fontSize: '17px', textAlign: 'center', cursor: 'pointer',
+                    height: '30px', fontSize: '17px', textAlign: 'center', cursor: 'pointer', color:`${Colors.text1}`, 
                     borderBottom: Tab1 ? `2px solid ${Colors.text3}` : 'none', marginTop: '10px', marginRight: '25px'
-                }}>Dashboard</div>
+                }}>
+                <EverCommLink text={"Dashboard"} to={`/${RoutePath.Dashboard}`} fontSize={'17px'} />
+                    
+                </div>
                 <div onClick={clickTab2} style={{ height: '30px', fontSize: '17px', textAlign: 'center', cursor: 'pointer', marginTop: '10px', borderBottom: Tab2 ? `2px solid ${Colors.text3}` : 'none', }}>Evaporator Map</div>
             </div>
 

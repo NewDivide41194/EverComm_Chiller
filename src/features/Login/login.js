@@ -1,28 +1,31 @@
 import React, { useState } from 'react'
 import * as Colors from '../../assets/everCommColors'
-import EverCommButton from '../../elements/evercomButton'
+import {EverCommButton} from '../../elements/evercomButton'
 import * as RoutePath from '../../network/routePath'
+import EverCommLogo from '../../assets/icons/everCommLogo.png'
 
 const Login = (props) => {
     const [email, setEmail] = useState('')
     const [Password, setPassword] = useState('')
-    const userEmail="admin@gmail.com"
-    const userPassword="admin@1234"
+    const [visible,setVisible]=useState(false)
+    const userEmail = "admin@gmail.com"
+    const userPassword = "admin@1234"
 
+    
     const navigate = (e) => {
         e.preventDefault()
-        if(email===userEmail&&Password===userPassword)
-        {props.history.replace(`/${RoutePath.Plant}`)}
+        if (email === userEmail && Password === userPassword) { props.history.replace(`/${RoutePath.Plant}`) }
 
     }
+    const View=()=>{setVisible(!visible)}
 
     const changeEmail = (e) => { setEmail(e.target.value) }
 
     const changePass = (e) => { setPassword(e.target.value) }
 
     return (
-        <div className='container-fluid'>
-            <img src={process.env.PUBLIC_URL + '/icons/everCommLogo.png'} style={{ height: 35, marginTop: '20px', marginLeft: '10px' }} alt='logo' />
+        <div style={{height:'100vh'}}>
+            <img src={EverCommLogo} style={{ height: 35, marginTop: '20px', marginLeft: '10px' }} alt='logo' />
             <div className='col-lg-4 col-md-6 text-light mx-auto'>
                 <div style={{ color: `${Colors.text1}`, textAlign: 'center', padding: '60px' }}>
                     <i className="fa fa-lock fa-3x py-4"></i>
@@ -40,15 +43,16 @@ const Login = (props) => {
 
                     <label htmlFor="defaultFormLoginPasswordEx" className="grey-text" style={{ color: `${Colors.text2}` }}>Password</label>
                     <input
-                        type="password"
+                        type={visible?"text":"password"}
                         id="defaultFormLoginPasswordEx"
                         className="form-control mb-4" placeholder="Password"
                         onChange={changePass} value={Password}
                         style={{ height: '60px', background: `${Colors.contanierBg}`, color: 'white', border: `1px solid ${Colors.text2}` }} />
-
-                    <EverCommButton type='submit' text={'Login'} style={{ background: 'linear-gradient(90deg,#144e9e,#1fa9ff)' }} />
+                    <span style={{ float: 'right', position: 'relative', marginTop: "-86px", fontSize: '18px', color: `${Colors.text2}`,marginRight:'20px',cursor:'pointer'}}onClick={View}>
+                        {visible?<i className="fa fa-eye-slash py-4"/>:<i className="fa fa-eye py-4"/>}
+                        </span>
+                    <EverCommButton type='submit' text={'Login'} />
                 </form>
-
             </div>
         </div>
 

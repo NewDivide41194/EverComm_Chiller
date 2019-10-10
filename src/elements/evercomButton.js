@@ -1,19 +1,19 @@
 import React from 'react'
 
-const EverCommButton = (props) => {
-    const { onClick,style,className, text, type } = props
+export const EverCommButton = (props) => {
+    const { onClick,style,className, text, type,height,fontSize } = props
     const defaultStyle = {
-        width:'100%',height:'60px',background:'red', outline:'none',
-        boxShadow:'none',color:'yellow',fontSize:'18px'
+        width:'100%',height:`${height===undefined?'60px':`${height}`}`,background: 'linear-gradient(90deg,#144e9e,#1fa9ff)', outline:'none',
+        boxShadow:'none',color:'white',fontSize:`${fontSize===undefined?'18px':`${fontSize}`}`
     }
     const userStyle=style===undefined?{}:style
     return (
         <button
         onClick={onClick}
-        type={type===undefined?'button':type}
+        type={'button'}
         style={{...defaultStyle,...userStyle}}
-        className={`btn btn-block ${className} text-light`}
+        className={`${className} text-light`}
         >{text}</button>
     )
 }
-export default EverCommButton
+

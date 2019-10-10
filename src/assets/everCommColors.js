@@ -7,3 +7,4 @@ export const on = 'rgb(0,255,0)';
 export const contanierBg = 'rgb(32, 43, 96)';
 export const leftSideBar = 'rgb(40, 53, 115)';
 export const loginText = 'rgb(102, 102, 115)'
+export const shadow='rgba(170, 208, 253, 0.133) 1px 1px 4px 2px'

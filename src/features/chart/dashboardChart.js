@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import { XAxis, LineChart, Line, Tooltip } from 'recharts';
 import ChillerOverview from '../chiller/chillerOverview';
 
-class Chart extends Component {
-    Data = [{
+const Chart =()=> {
+    const Data = [{
         id: 22,
         name: "Chiller1",
         efficiency: 981.26,
@@ -24,7 +24,7 @@ class Chart extends Component {
         viewChiller: "",
         dataLossText: ""
     }]
-    data = [
+    const data = [
         {
             chiller: [
                 { name: '16:15', uv: 2 },
@@ -79,10 +79,9 @@ class Chart extends Component {
         },
     ];
 
-    render() {
         return (
             <div className='row justify-content-around'>
-                    {this.data.map((value, key) =>
+                    {data.map((value, key) =>
                         <div style={{ border: '1px solid rgba(170, 208, 253, 0.133)', background: 'rgb(32, 43, 96)', width: 250, minWidth: '200px', height: 190, margin: 10, textAlign: 'center', color: 'white' }}>
                             {value.type === "temp" ? <i className="fa fa-thermometer-three-quarters"></i> :
                                 value.type === "power" ? <i className="fa fa-bolt"></i> : <i className="fa fa-tachometer-alt"></i>
@@ -100,14 +99,13 @@ class Chart extends Component {
                             <span style={{ color: "white" }}>{value.label}</span>
                         </div>
                     )}
-                    <ChillerOverview data={this.Data}/>
+                    <ChillerOverview data={Data}/>
 
                 </div>
 
 
         )
 
-    }
 
 }
 

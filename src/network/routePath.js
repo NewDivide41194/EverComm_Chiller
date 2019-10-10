@@ -5,3 +5,5 @@ export const Login='login'
 export const Plant='plant'
 
 export const Dashboard='dashboard'
+
+export const ChllerRealtime='chiller_realtime'

@@ -4,6 +4,7 @@ import Login from '../features/Login/login'
 import DashboardContainer from '../features/dashboard/dashboardContainer'
 import * as RoutePath from '../network/routePath'
 import ALLPlant from '../features/Plant/plant'
+import ChillerContainer from '../features/chiller/chiller'
 
 const Router = () => {
     return (
@@ -11,6 +12,7 @@ const Router = () => {
                 <Route path={`/${RoutePath.Login}`} component={Login}/>
                 <Route path={`/${RoutePath.Plant}`} component={ALLPlant}/>
                 <Route path={`/${RoutePath.Dashboard}`} component={DashboardContainer}/>
+                <Route path={`/${RoutePath.ChllerRealtime}`} component={ChillerContainer}/>
                 <Redirect to={`/${RoutePath.Login}`}/>
             </Switch>
     )
