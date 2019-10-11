@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
+import React from 'react'
 import * as Colors from '../../assets/everCommColors'
 import { EvercommLabel, ValueText } from '../../elements/everccommLabel'
 import { EverCommButton } from '../../elements/evercomButton'
 import ChillerLogo from '../../assets/icons/chiller.jpg'
 
-const ChillerRightDashboard = () => {    
+const ChillerDiagnotics = () => {
     return (
-        <div className='col-lg-3 col-md-6 p-3 float-right' style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20 }}>
+        <div className='col-lg-3 col-md-6 p-3' style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20 }}>
             <div className='d-flex justify-content-between'>
                 <div style={{ width: "100%" }}>
                     <div><img src={ChillerLogo} alt='chiller' style={{ width: '30px', paddingTop: '10px' }} />
-                        {'Chiller1'}<br />
+                        {'Dia'}<br />
                         <EvercommLabel text={'Chiller1'} bold />
                     </div>
 
@@ -86,8 +86,7 @@ const ChillerRightDashboard = () => {
                     <ValueText text={'Data Detail'} color={`${Colors.text3}`} fontSize={"15px"} />
                 </div>
             </div>
-           
-            </div>
+        </div>
     )
 }
-export default ChillerRightDashboard
+export default ChillerDiagnotics

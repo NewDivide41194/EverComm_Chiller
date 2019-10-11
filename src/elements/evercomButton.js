@@ -12,8 +12,9 @@ export const EverCommButton = (props) => {
         onClick={onClick}
         type={'button'}
         style={{...defaultStyle,...userStyle}}
-        className={`${className} text-light`}
+        className={`btn ${className} text-light`}
         >{text}</button>
     )
 }
 
+    

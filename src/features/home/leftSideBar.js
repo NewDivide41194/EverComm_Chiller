@@ -3,7 +3,8 @@ import { withRouter,Link } from 'react-router-dom'
 import * as Colors from '../../assets/everCommColors'
 import * as RouthPath from '../../network/routePath'
 
-const LeftSideBar = () => {
+const LeftSideBar = (props) => {
+    // const {Dashboard,chillers,chillerUtilization,evaporatorMapping}=props
 
     const [collapse, setCollapse] = useState(false)
 

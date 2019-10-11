@@ -39,7 +39,7 @@ const NavBar = (props) => {
 
 
     return (
-        <div className="d-flex flex-row justify-content-between px-4 py-3 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
+        <div className="d-flex flex-row justify-content-between px-4 py-2 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
             <div className='row font-weight-bold text-light'>
                 <Link to={`/${RoutePath.Dashboard}`}><img src={EverCommLogo} style={{ height: 35, marginRight: '30px' }} alt='logo'/></Link>
                 <div onClick={clickTab1} style={{
@@ -79,7 +79,7 @@ const NavBar = (props) => {
                             <Link to='#' className="list-group-item list-group-item-action" >Chiller 1 has stopped due to high temperature</Link>
                             <Link to='#' className="list-group-item list-group-item-action" >Change Plant</Link>
                             <Link to='#' className="list-group-item list-group-item-action" >Switch to Light Mode</Link>
-                            <Link to='#' className="list-group-item list-group-item-action" >Logout</Link>
+                            <Link to='/login' className="list-group-item list-group-item-action" >Logout</Link>
                         </div>} 
                 </div>
               

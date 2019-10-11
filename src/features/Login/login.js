@@ -5,8 +5,8 @@ import * as RoutePath from '../../network/routePath'
 import EverCommLogo from '../../assets/icons/everCommLogo.png'
 
 const Login = (props) => {
-    const [email, setEmail] = useState('')
-    const [Password, setPassword] = useState('')
+    const [email, setEmail] = useState(null)
+    const [Password, setPassword] = useState(null)
     const [visible,setVisible]=useState(false)
     const userEmail = "admin@gmail.com"
     const userPassword = "admin@1234"
@@ -14,8 +14,10 @@ const Login = (props) => {
     
     const navigate = (e) => {
         e.preventDefault()
-        if (email === userEmail && Password === userPassword) { props.history.replace(`/${RoutePath.Plant}`) }
-
+        if (email === userEmail && Password === userPassword) { props.history.replace(`/${RoutePath.Plant}`)}
+        else if(email===null) {alert('Fill Email')}
+        else if (Password===null){alert('Fill Password')}
+        else{alert('Email or Password wrong')} 
     }
     const View=()=>{setVisible(!visible)}
 
@@ -51,7 +53,7 @@ const Login = (props) => {
                     <span style={{ float: 'right', position: 'relative', marginTop: "-86px", fontSize: '18px', color: `${Colors.text2}`,marginRight:'20px',cursor:'pointer'}}onClick={View}>
                         {visible?<i className="fa fa-eye-slash py-4"/>:<i className="fa fa-eye py-4"/>}
                         </span>
-                    <EverCommButton type='submit' text={'Login'} />
+                    <EverCommButton type='submit'onClick={navigate} text={'Login'} />
                 </form>
             </div>
         </div>
