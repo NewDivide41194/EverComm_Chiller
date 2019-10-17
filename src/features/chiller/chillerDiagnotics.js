@@ -1,92 +1,46 @@
 import React from 'react'
 import * as Colors from '../../assets/everCommColors'
-import { EvercommLabel, ValueText } from '../../elements/everccommLabel'
+import { EvercommLabel, EverCommValueText } from '../../elements/everccommLabel'
 import { EverCommButton } from '../../elements/evercomButton'
-import ChillerLogo from '../../assets/icons/chiller.jpg'
+import DiagnoticChart from '../chart/chillerDiagnoticChart'
 
-const ChillerDiagnotics = () => {
+const ChillerDiagnotics = (props) => {
+    const {ShowDiagnotics}=props
     return (
-        <div className='col-lg-3 col-md-6 p-3' style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20 }}>
-            <div className='d-flex justify-content-between'>
-                <div style={{ width: "100%" }}>
-                    <div><img src={ChillerLogo} alt='chiller' style={{ width: '30px', paddingTop: '10px' }} />
-                        {'Dia'}<br />
-                        <EvercommLabel text={'Chiller1'} bold />
-                    </div>
+        <div className='col-lg-3 col-md-12 col-sm-12 float-right p-3'
+        style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20, marginTop: `${window.innerWidth < 1089 ? '20px' : '0px'}`, marginRight: `${window.innerWidth < 1089 ? '0px' : '20px'}` }}>
+                <span className='p-3 d-flex justify-content-end' onClick={ShowDiagnotics}>
+                    <i className="fa fa-times" style={{cursor:'pointer'}}/>
+                    </span>
+                <EverCommValueText text={'Speed and Vane Position'} fontSize={'14px'} />
+                <EvercommLabel text={'Chiller 4'} bold/>
+                <DiagnoticChart/>
+                <EverCommValueText text={'Total Monthly Average'} fontSize={'14px'} style={{borderTop:`1px solid ${Colors.text2}`}}/>
 
+                <EvercommLabel text={'Violations Summary'} fontSize={'14px'} style={{borderTop:`1px solid ${Colors.text2}`}}/>
+                <div className='d-flex flex-row justify-content-between pt-2' style={{borderTop:`1px solid ${Colors.text2}`}}>
+                <EverCommValueText text={'Number of rule Violations'} light />
+                <span className='px-3 d-flex justify-content-end'>
+                <EverCommValueText text={'28'} light/>
+                </span>
                 </div>
-                <div style={{ width: "100%", textAlign: 'right' }}>
-                    <ValueText style={{ color: `${Colors.text3}` }} text={'0.96*C'} />
-                </div>
-            </div>
 
-            <div className='d-flex justify-content-between'>
-                <div style={{ width: "100%" }}>
-                    <EvercommLabel text={'Brand'} />
-                    <ValueText text={'Trane'} />
+                <EverCommValueText text={'Average When Violated'} light style={{borderTop:`1px solid ${Colors.text2}`}} />                
+                <div className='d-flex flex-row justify-content-between'>
+                <EvercommLabel text={'VFD SPEED'}  />
+                <EvercommLabel text={'Vane Position'} />
                 </div>
-                <div style={{ width: "100%", paddingLeft: '20px' }}>
-                    <EvercommLabel text={'Model'} />
-                    <ValueText text={'Water-Cooled Chiller'} />
+                <div className='d-flex flex-row justify-content-between' >
+                <EverCommValueText text={'55Hz'} light fontSize={"20px"}/>
+                <EverCommValueText text={'48%'} light fontSize={"20px"} />
                 </div>
-            </div>
 
-            <div className='d-flex justify-content-between'>
-                <div style={{ width: "100%" }}>
-                    <EvercommLabel text={'Serial Number'} />
-                    <ValueText text={'RTHD73U613AAT14060905'} />
-                </div>
-                <div style={{ width: "100%", paddingLeft: '20px' }}>
-                    <EvercommLabel text={'Tonnage'} />
-                    <ValueText text={'Water-Cooled Chiller'} />
-                </div>
-            </div>
-            <div className='border-bottom'>
-                <EvercommLabel text={'Serial Number'} />
-                <ValueText text={'RTHD73U613AAT14060905'} />
-            </div>
+                <EverCommValueText text={'Percent of run time when rule violated'} light style={{borderTop:`1px solid ${Colors.text2}`}} />                
+                <EverCommValueText text={'55.22%'} light fontSize={"20px"} />
 
-            <div className='pt-4'>
-                <div className='d-flex justify-content-between'>
-                    <div style={{ width: "100%" }}>
-                        <EvercommLabel text={'Efficiency'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                    <div style={{ width: "100%", paddingLeft: '20px' }}>
-                        <EvercommLabel text={'Power'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                </div>
-                <div className='d-flex justify-content-between'>
-                    <div style={{ width: "100%" }}>
-                        <EvercommLabel text={'Power Loadind'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                    <div style={{ width: "100%", paddingLeft: '20px' }}>
-                        <EvercommLabel text={'Cooling Capacity'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                </div>
-                <div className='d-flex justify-content-between'>
-                    <div style={{ width: "100%" }}>
-                        <EvercommLabel text={'Eva Delta Temp'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                    <div style={{ paddingBottom: '5rem', width: "100%", paddingLeft: '20px' }}>
-                        <EvercommLabel text={'Average Loading'} />
-                        <ValueText text={'0.00'} fontSize={"20px"} />
-                    </div>
-                </div>
-                <div className='border-bottom '>
-                    <EvercommLabel text={'Recommended Action'} bold />
-                </div>
-                <EvercommLabel text={'No Change Required'} bold color={"white"} />
-                <div className='text-center w-100 p-2'>
-                    <EverCommButton height={'35px'} text={'Chiller Diagnotics'} fontSize={"12px"}/>
-                    <ValueText text={'Data Detail'} color={`${Colors.text3}`} fontSize={"15px"} />
-                </div>
+                <EvercommLabel text={'Recommended Action'} bold/>
+                <EvercommLabel text={'No Change Required'} bold color={"white"} style={{borderTop:`1px solid ${Colors.text2}`}}/>
             </div>
-        </div>
     )
 }
 export default ChillerDiagnotics

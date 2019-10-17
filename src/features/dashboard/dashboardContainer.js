@@ -12,13 +12,14 @@ const DashboardContainer = () => {
     return (
         <div>
             <NavBar />
-
                 <div className='row'>
-                    <div className=''><LeftSideBar /></div>
-                    <EvercommLabel text={storage}/>
+                <LeftSideBar />
+
                     <div className='col-lg-8 col-md-10 col-sm-12'><Chart /></div>
-                    <div><CriticalAlerts chillerName={alertChiller} /></div>
+                    <div className='col-lg-2 col-md-12 col-sm-2'><CriticalAlerts chillerName={alertChiller} /></div>
                 </div>
+                <EvercommLabel text={storage}/>
+
 
         </div>
     )

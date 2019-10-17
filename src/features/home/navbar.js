@@ -5,7 +5,7 @@ import EverCommLogo from '../../assets/icons/everCommLogo.png'
 import * as RoutePath from '../../network/routePath'
 import { EverCommLink } from '../../elements/everccommLabel'
 
-const NavBar = (props) => {
+const NavBar = () => {
     const [noti, setNoti] = useState(false)
     const [profile, setProfile] = useState(false)
     const [Tab1, setTab1] = useState(true)
