@@ -1,14 +1,13 @@
 import React from 'react'
 import * as Colors from '../../assets/everCommColors'
 import { EvercommLabel, EverCommValueText } from '../../elements/everccommLabel'
-import { EverCommButton } from '../../elements/evercomButton'
 import DiagnoticChart from '../chart/chillerDiagnoticChart'
 
 const ChillerDiagnotics = (props) => {
     const {ShowDiagnotics}=props
     return (
         <div className='col-lg-3 col-md-12 col-sm-12 float-right p-3'
-        style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20, marginTop: `${window.innerWidth < 1089 ? '20px' : '0px'}`, marginRight: `${window.innerWidth < 1089 ? '0px' : '20px'}` }}>
+        style={{maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20, marginTop: `${window.innerWidth < 1089 ? '20px' : '0px'}`, marginRight: `${window.innerWidth < 1089 ? '0px' : '20px'}` }}>
                 <span className='p-3 d-flex justify-content-end' onClick={ShowDiagnotics}>
                     <i className="fa fa-times" style={{cursor:'pointer'}}/>
                     </span>

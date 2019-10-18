@@ -24,7 +24,6 @@ const LeftSideBar = (props) => {
                     </div>}
             </div>
         </div>
-
     )
 }
 export default withRouter(LeftSideBar)

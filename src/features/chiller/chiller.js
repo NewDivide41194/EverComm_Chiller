@@ -2,18 +2,19 @@ import React from 'react'
 import ChillerRightDashboard from './chillerRightDashboard'
 import NavBar from '../home/navbar'
 import LeftSideBar from '../../features/home/leftSideBar'
-import ChillerTab from './chillertab'
 import ChillerEfficiency from './chillerefficiency'
 
 
 const ChillerContainer = () => {
    return (
-      <div style={{ height: '100vh' }}>
-         <NavBar />
+      <div style={{ height: '100%' }}>
+         <NavBar/>
+
          <ChillerRightDashboard />
          <ChillerEfficiency />
-         
-      </div>
+
+         </div>
+       
 
    )
 }

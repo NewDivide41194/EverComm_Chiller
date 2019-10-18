@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { XAxis, LineChart, Line, Tooltip } from 'recharts';
 import ChillerOverview from '../chiller/chillerOverview';
 

@@ -5,6 +5,9 @@ import { EverCommButton } from '../../elements/evercomButton'
 import ChillerLogo from '../../assets/icons/chiller.jpg'
 import ChillerDiagnotics from './chillerDiagnotics'
 import ChillerPump from './chillerPumpDashboard'
+import ChillerTab from './chillertab'
+import MomentButton from './button'
+
 
 const ChillerRightDashboard = () => {
 
@@ -22,7 +25,7 @@ const ChillerRightDashboard = () => {
     console.log('dia is' + diagnotics, 'Pump is' + Pump);
 
     return (
-        <div className='p-3'>                    
+        <div className='p-3'>
             <div className='col-lg-3 col-md-6 p-3 col-sm-12 float-right' style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20 }}>
                 <div className='d-flex justify-content-between'>
                     <div style={{ width: "100%" }}>
@@ -104,21 +107,19 @@ const ChillerRightDashboard = () => {
                         <EverCommValueText text={'Data Detail'} color={`${Colors.text3}`} fontSize={"15px"} />
                     </div>
                 </div>
-
             </div>
-
+<ChillerTab ShowPump={ShowPump}/>
+<div className='d-flex justify-content-end' >
+        <MomentButton />
+      </div>
             {Pump ?
-
-                    <ChillerPump ShowPump={ShowPump} />           
-
+                <ChillerPump ShowPump={ShowPump} />
                 : diagnotics ?
-
-                        <ChillerDiagnotics ShowDiagnotics={ShowDiagnotics} />
+                    <ChillerDiagnotics ShowDiagnotics={ShowDiagnotics} />
                     : null
             }
 
         </div>
-
     )
 }
 export default ChillerRightDashboard

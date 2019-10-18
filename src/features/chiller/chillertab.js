@@ -1,7 +1,5 @@
 import React from 'react'
 import * as Colors from '../../assets/everCommColors'
-import ChillerEfficiency from './chillerefficiency'
-import MomentButton from './button'
 
 const ChillerTab = (props) => {  
   const {ShowPump}=props
@@ -11,7 +9,7 @@ const ChillerTab = (props) => {
           <div className="d-flex align-items-center" style={{ fontSize: "20px" }}>
             <b className="px-0" style={{ color: `${Colors.text1}` }}>Chiller</b>
             <i className="fa fa-circle px-1" style={{ color: `${Colors.text3}`, fontSize: "12px" }}></i>
-            <div className="ml-3 px-2 rounded" style={{ cursor: "pointer", fontSize: "14px", color: `${Colors.text2}`, border: `1px solid ${Colors.text2}` }} onClick={ShowPump}>
+            <div className="ml-3 px-2 rounded" style={{ cursor: "pointer", fontSize: "14px", color: `${Colors.text2}`, border: `1px solid ${Colors.text2}`}} onClick={ShowPump}>
               Pump1
            </div>
 

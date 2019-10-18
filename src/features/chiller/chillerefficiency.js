@@ -2,8 +2,6 @@ import React, { useEffect, useState } from 'react'
 import * as Colors from '../../assets/everCommColors'
 import Table from './table'
 import { XAxis, AreaChart, Tooltip, YAxis, Area, CartesianGrid, ResponsiveContainer } from 'recharts';
-import ChillerTab from './chillertab'
-import MomentButton from './button'
 const data = [
   { date: '10 Oct 00:00', uv: 350 },
   { date: '11 Oct 00:00', uv: 400 },
@@ -13,14 +11,14 @@ const data = [
   { date: '15 Oct 00:00', uv: 200 },
   { date: '16 Oct 00:00', uv: 300 },
 ];
-function getWindowDimensions() {
+const getWindowDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
     height
   };
 }
-function useWindowDimensions() {
+const useWindowDimensions = () => {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
@@ -37,13 +35,10 @@ function useWindowDimensions() {
 }
 
 const ChillerEfficiency = (props) => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
-    <div style={{ textAlign: 'left' }}>
-      <ChillerTab />
-      <div className='d-flex justify-content-end' >
-        <MomentButton />
-      </div>
+    <div style={{ width: '100%', marginTop: 20 }}>
+     
       <div className="row pl-3" >
         <div className="col p-0 m-0">
           <div className="pt-1 pb-3 pl-3" style={{ fontSize: "16px", color: `${Colors.text1}` }} >
@@ -76,7 +71,6 @@ const ChillerEfficiency = (props) => {
               />
             </AreaChart>
           </ResponsiveContainer>
-
         </div>
       </div>
       <Table />
