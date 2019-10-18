@@ -11,14 +11,14 @@ const data = [
   { date: '15 Oct 00:00', uv: 200 },
   { date: '16 Oct 00:00', uv: 300 },
 ];
-const getWindowDimensions = () => {
+function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
     height
   };
 }
-const useWindowDimensions = () => {
+function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(
     getWindowDimensions()
   );
@@ -34,11 +34,10 @@ const useWindowDimensions = () => {
   return windowDimensions;
 }
 
-const ChillerEfficiency = (props) => {
-  const { width } = useWindowDimensions();
+const ChillerEfficiency = () => {
+  const { width, height } = useWindowDimensions();
   return (
-    <div style={{ width: '100%', marginTop: 20 }}>
-     
+    <div style={{ textAlign: 'left' }}>
       <div className="row pl-3" >
         <div className="col p-0 m-0">
           <div className="pt-1 pb-3 pl-3" style={{ fontSize: "16px", color: `${Colors.text1}` }} >
@@ -71,6 +70,7 @@ const ChillerEfficiency = (props) => {
               />
             </AreaChart>
           </ResponsiveContainer>
+
         </div>
       </div>
       <Table />

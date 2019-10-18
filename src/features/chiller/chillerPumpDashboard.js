@@ -7,7 +7,7 @@ const ChillerPump = (props) => {
     const { ShowPump } = props
     return (
         <div className='col-lg-12 col-md-2 col-sm-12 float-right p-3'
-            style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20, marginTop: `${window.innerWidth < 1089 ? '20px' : '0px'}`, marginRight: `${window.innerWidth < 1089 ? '0px' : '20px'}` }}>
+            style={{ maxWidth: '380px', color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20, marginRight: `${window.innerWidth < 1089 ? '0px' : '20px'}` }}>
             <span className='p-3 d-flex justify-content-end' onClick={ShowPump}>
                 <i className="fa fa-times" style={{ cursor: 'pointer' }} onClick={ShowPump} />
             </span>

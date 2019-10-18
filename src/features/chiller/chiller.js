@@ -11,7 +11,7 @@ const ChillerContainer = () => {
          <NavBar/>
 
          <ChillerRightDashboard />
-         <ChillerEfficiency />
+         <ChillerEfficiency/>
 
          </div>
        

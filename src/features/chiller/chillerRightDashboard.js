@@ -5,7 +5,6 @@ import { EverCommButton } from '../../elements/evercomButton'
 import ChillerLogo from '../../assets/icons/chiller.jpg'
 import ChillerDiagnotics from './chillerDiagnotics'
 import ChillerPump from './chillerPumpDashboard'
-import ChillerTab from './chillertab'
 import MomentButton from './button'
 
 
@@ -108,7 +107,6 @@ const ChillerRightDashboard = () => {
                     </div>
                 </div>
             </div>
-<ChillerTab ShowPump={ShowPump}/>
 <div className='d-flex justify-content-end' >
         <MomentButton />
       </div>

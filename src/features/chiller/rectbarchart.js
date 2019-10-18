@@ -1,6 +1,5 @@
 import React from 'react'
-import { XAxis, BarChart, Tooltip, YAxis, Bar, CartesianGrid, ResponsiveContainer } from 'recharts'
-
+import { XAxis, BarChart, Tooltip, YAxis, Bar, CartesianGrid, ResponsiveContainer } from 'recharts';
 const data = [
     { unit: '1', count: 150 },
     { unit: '0.9', count: 100 },
@@ -10,9 +9,9 @@ const data = [
     { unit: '1.2', count: 700 },
     { unit: '1.3', count: 650 },
     { unit: '0.8', count: 760 },
-]
+];
 
-const ReactBarChart = () => {
+const RectBarChart = () => {
     return (
         <ResponsiveContainer height={286}>
             <BarChart width={600} height={300} data={data}
@@ -22,10 +21,12 @@ const ReactBarChart = () => {
                 <XAxis dataKey="unit" label={{ value: 'KW/Ton', position: 'insideBottom', fill: '#fff' }} height={50} stroke="#fff" />
                 <YAxis label={{ value: 'count', angle: -90, position: 'insideLeft', fill: '#fff' }} stroke="#fff" />
                 <Tooltip cursor={{ fillOpacity: "0.1" }} />
-                <Bar dataKey="count"
+                <Bar dataKey="count" maxBarSize={36}
                     fill="#0EB801" radius={-45, 45, 45} />
+
             </BarChart>
         </ResponsiveContainer>
+
     )
 }
-export default ReactBarChart
+export default RectBarChart
