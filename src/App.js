@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Router from './network/Router'
-import { BrowserRouter } from 'react-router-dom';
+import Router from './Router'
+import { withRouter } from 'react-router-dom';
 
 class App extends Component {
 
@@ -12,11 +12,11 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <div className="App">
+          <Router />
+      </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
