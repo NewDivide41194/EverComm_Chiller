@@ -1,5 +1,5 @@
 import React from 'react'
-import { XAxis, BarChart,Tooltip, YAxis,Bar,CartesianGrid,ResponsiveContainer,Legend } from 'recharts';
+import { XAxis, BarChart,Tooltip, YAxis,Bar,CartesianGrid,ResponsiveContainer } from 'recharts';
 
 const epreday = [
     {unit: '10 Oct 23:59', count: 1.2},

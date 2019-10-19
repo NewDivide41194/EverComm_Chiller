@@ -31,7 +31,7 @@ const NotActiveStyle = () => {
   }
 }
 
-const ChillerTab = () => {
+const ChillerTab = (props) => {
   const [Tab1, setTab1] = useState(true);
   const [Tab2, setTab2] = useState(false);
   const [Tab3, setTab3] = useState(false);
@@ -81,26 +81,25 @@ const ChillerTab = () => {
     setItem(!item);
     setName(name);
   }
-
+  const {ShowPump}=props
   return (
     <div>
-      <div className="row align-items-center">
-        <div className="col-sm-4 pl-3 pr-0">
+      <div className="row justify-content-between">
+        <div>
           <div className="d-flex align-items-center" style={{ fontSize: "20px" }}>
-            <b className="px-0" style={{ color: `${Colors.text1}` }}>Chiller</b>
-            <i className="fa fa-circle px-1" style={{ color: `${Colors.text3}`, fontSize: "12px" }}></i>
-            <div className="ml-3 px-2 py-0 rounded" style={{ cursor: "pointer", fontSize: "8px", color: `${Colors.text2}`, border: `1px solid ${Colors.text2}` }}>
+            <b className="p-2" style={{ color: `${Colors.text1}` }}>Chiller</b>
+            <i className="fa fa-circle p-1" style={{ color: `${Colors.on}`, fontSize: "12px" }}></i>
+            <div className="ml-3 px-2 rounded" style={{ cursor: "pointer", fontSize: "12px", color: `${Colors.text2}`, border: `1px solid ${Colors.text2}` }} onClick={ShowPump}>
               Pump1
            </div>
           </div>
           {
             !Tab1 &&
-            <div style={{ width: "250px", textAlign: "left" }}>
-              <div style={{ cursor: 'pointer', height: 50, backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : `${Colors.contanierBg}`}`, borderRadius: 8, padding: 12 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
+            <div style={{ width: "100%", textAlign: "center" }}>
+              <div style={{ cursor: 'pointer', backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : 'rgba(255, 255, 255, .1)'}`, borderRadius: 15, padding: 5 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
                 {window.innerWidth <= 800 ?
                   <i className="fa fa-user" style={{ color: 'white', fontSize: '12px' }} />
                   : <span style={{ color: 'white' }}>{name}<i className="fa fa-sort-down" /></span>
-
                 }
               </div>
               {item &&

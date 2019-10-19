@@ -40,9 +40,7 @@ return(
               <td>Metric</td>
                 <td>Value</td>
                 <td>Baseline</td>
-              </tr>
-                
-
+              </tr>     
             </thead>
             <tbody>
                {data.map((values,key)=>{

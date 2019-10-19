@@ -3,24 +3,20 @@ import LeftSideBar from '../../features/home/leftSideBar'
 import NavBar from '../home/navbar'
 import CriticalAlerts from '../home/alertList'
 import Chart from '../chart/dashboardChart'
-import { EvercommLabel } from '../../elements/everccommLabel'
+
 const DashboardContainer = () => {
     const alertChiller = "Chiller1"
-    const storage=localStorage.getItem('plants')
-    console.log(storage);
-    
+
     return (
-        <div>
+        <div style={{ height: '100%' }}>
             <NavBar />
+            <div className='container-fluid'>
                 <div className='row'>
-                <LeftSideBar />
-
+                    <div className='p-4 col-sm-12 col-lg-2 col-md-12' style={{ zIndex: '4' }}><LeftSideBar /></div>
                     <div className='col-lg-8 col-md-10 col-sm-12'><Chart /></div>
-                    <div className='col-lg-2 col-md-12 col-sm-2'><CriticalAlerts chillerName={alertChiller} /></div>
+                    <div className='col-lg-2 col-md-12 col-sm-12'><CriticalAlerts chillerName={alertChiller} /></div>
                 </div>
-                <EvercommLabel text={storage}/>
-
-
+            </div>                    
         </div>
     )
 }

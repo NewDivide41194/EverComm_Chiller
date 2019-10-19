@@ -33,23 +33,22 @@ const NavBar = () => {
         setNoti(false)
     }
 
+    const MouseOver1=()=> {sethov1(!hov1)}
+    const MouseOver2=()=> {sethov2(!hov2)}
 
-    function MouseOver1() {sethov1(!hov1)}
-    function MouseOver2() {sethov2(!hov2)}
+    const ActiveTab={borderBottom:`2px solid ${Colors.text3}`,height: '30px',marginTop: '10px', marginRight: '25px'}
+    const InactiveTab={border:'none',height: '30px',marginTop: '10px', marginRight: '25px'}
 
 
     return (
-        <div className="d-flex flex-row justify-content-between px-4 py-2 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
-            <div className='row font-weight-bold text-light'>
-                <Link to={`/${RoutePath.Dashboard}`}><img src={EverCommLogo} style={{ height: 35, marginRight: '30px' }} alt='logo'/></Link>
-                <div onClick={clickTab1} style={{
-                    height: '30px', fontSize: '17px', textAlign: 'center', cursor: 'pointer', color:`${Colors.text1}`, 
-                    borderBottom: Tab1 ? `2px solid ${Colors.text3}` : 'none', marginTop: '10px', marginRight: '25px'
-                }}>
-                <EverCommLink text={"Dashboard"} to={`/${RoutePath.Dashboard}`} fontSize={'17px'} />
+        <div className="d-flex flex-row justify-content-between px-5 py-3 sticky-top" style={{background:'linear-gradient(-60deg, rgb(16, 24, 65), rgb(32, 43, 96))'}}>
+            <div className='row font-weight-bold text-light' style={{}}>
+                <Link to={`/${RoutePath.Dashboard}`}><img src={EverCommLogo} style={{ height: 30, marginRight: '30px',marginTop:'8px' }} alt='logo'/></Link>
+                <div onClick={clickTab1} style={Tab1?ActiveTab:InactiveTab}>
+                <EverCommLink text={"Dashboard"} to={`/${RoutePath.Dashboard}`} fontSize={`${Tab1?'15px':'14px'}`} color={`${Tab1?`${Colors.text1}`:`${Colors.text2}`}`} />
                     
                 </div>
-                <div onClick={clickTab2} style={{ height: '30px', fontSize: '17px', textAlign: 'center', cursor: 'pointer', marginTop: '10px', borderBottom: Tab2 ? `2px solid ${Colors.text3}` : 'none', }}>Evaporator Map</div>
+                <div onClick={clickTab2} style={Tab2?ActiveTab:InactiveTab}><EverCommLink text={"Evaporator Map"} to={'#'} fontSize={`${Tab2?'15px':'14px'}`} color={`${Tab2?`${Colors.text1}`:`${Colors.text2}`}`} /></div>
             </div>
 
             <div className='d-flex'>
@@ -60,16 +59,15 @@ const NavBar = () => {
                     {noti &&
                         <div className='mt-2' style={{ width: '250px', background: 'white', fontSize: '12pt', position: 'absolute', borderRadius: 10, marginLeft: '-200px', zIndex: 3 }}>
                             <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Chiller 1 has stopped due to high temperature</Link>
-                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Change Plant</Link>
-                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Switch to Light Mode</Link>
-                            <Link to='#' className="list-group-item" style={{ cursor: 'pointer', textDecoration: 'none' }}>See All Alerts</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Chiller 2 has stopped due to high temperature</Link>
+                            <Link to='#' className="list-group-item list-group-item-action" style={{ cursor: 'pointer' }}>Chiller 3 has stopped due to high temperature</Link>
                         </div>}
                 </div>
                 <div>
                      <div style={{ cursor: 'pointer',height: 50, backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : `${Colors.contanierBg}`}`, borderRadius: 8,padding:12 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
                     {window.innerWidth <= 800 ?
                      <i className="fa fa-user" style={{ color: 'white', fontSize: '16pt' }}/>
-                        : <span style={{ color: 'white', fontWeight: 'bold' }}>Super User Kr<i className="fa fa-sort-down"/></span>
+                        : <span style={{ color: 'white', fontWeight: 'bold', fontSize:'14px' }}>Super Admin Kr<i className="fa fa-sort-down"/></span>
                        
                     }
                     </div>
@@ -77,7 +75,7 @@ const NavBar = () => {
                     {profile &&
                         <div className='mt-2' style={{ width: '250px', background: 'white', fontSize: '12pt', position: 'absolute', borderRadius: 10, marginLeft: '-250px', zIndex: 2 }}>
                             <Link to='#' className="list-group-item list-group-item-action" >Chiller 1 has stopped due to high temperature</Link>
-                            <Link to='#' className="list-group-item list-group-item-action" >Change Plant</Link>
+                            <Link to={`/${RoutePath.Plant}`} className="list-group-item list-group-item-action" >Change Plant</Link>
                             <Link to='#' className="list-group-item list-group-item-action" >Switch to Light Mode</Link>
                             <Link to='/login' className="list-group-item list-group-item-action" >Logout</Link>
                         </div>} 

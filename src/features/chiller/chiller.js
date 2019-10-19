@@ -7,11 +7,10 @@ import ChillerEfficiency from './chillerefficiency'
 
 const ChillerContainer = () => {
    return (
-      <div style={{ height: '100%' }}>
+      <div style={{ height: '100vh' }}>
          <NavBar/>
 
          <ChillerRightDashboard />
-         <ChillerEfficiency/>
 
          </div>
        

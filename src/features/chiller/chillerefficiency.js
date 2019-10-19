@@ -35,7 +35,7 @@ function useWindowDimensions() {
 }
 
 const ChillerEfficiency = () => {
-  const { width, height } = useWindowDimensions();
+  const { width } = useWindowDimensions();
   return (
     <div style={{ textAlign: 'left' }}>
       <div className="row pl-3" >

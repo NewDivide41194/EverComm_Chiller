@@ -3,10 +3,10 @@ import * as Colors from '../assets/everCommColors'
 import { Link } from 'react-router-dom'
 
 export const EvercommLabel = (props) => {
-    const { style, className, text, bold, color } = props
+    const { style, className, text, bold, color,noFullWidth,fontSize } = props
     const defaultStyle = {
-        width: '100%', fontWeight: `${bold === undefined ? 'normal' : 'bold'}`,
-        color: `${color === undefined ? Colors.text2 : color}`, fontSize: '14px'
+        width: `${noFullWidth===undefined? '100%':''}`, fontWeight: `${bold === undefined ? 'normal' : 'bold'}`,
+        color: `${color === undefined ? Colors.text2 : color}`, fontSize: `${fontSize === undefined ? '14px' : `${fontSize}`}`,
     }
     const userStyle = style === undefined ? {} : style
     return (
@@ -33,7 +33,7 @@ export const EverCommValueText = (props) => {
 }
 
 export const EverCommLink = (props) => {
-    const { style, text, fontSize, color, to } = props
+    const { style,className, text, fontSize, color, to } = props
     const defaultStyle = {
         color: `${color === undefined ? Colors.text1 : color}`, fontSize: `${fontSize === undefined ? '14px' : `${fontSize}`}`,
         textDecoration: 'none'
@@ -43,6 +43,7 @@ export const EverCommLink = (props) => {
         <Link
             to={to}
             style={{ ...defaultStyle, ...userStyle }}
+            className={className}
         >{text === undefined ? null : text}</Link>
     )
 }

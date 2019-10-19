@@ -60,8 +60,6 @@ const Button =()=>{
       setTab4(true);
     }
   }
-
-
     return(
         <div>
       <button type="button" onClick={(e) => clickTab("1",e)}
