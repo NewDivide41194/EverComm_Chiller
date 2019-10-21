@@ -17,9 +17,11 @@ const ChillerRightDashboard = () => {
     }
 
     const [Pump, setPump] = useState(false)
-    const ShowPump = () => {
+    const ShowPump = () => {        
         setPump(!Pump)
         setDiagnotics(false)
+        if (window.innerWidth<=1090)
+        window.scrollTo({left:0,top:document.body.scrollHeight,behavior:'smooth'})
     }
     console.log('dia is' + diagnotics, 'Pump is' + Pump);
 
@@ -28,7 +30,7 @@ const ChillerRightDashboard = () => {
             <div className='row justify-content-between'>
                 <div className='p-4 col-sm-12 col-lg-2 col-md-12' style={{zIndex:'4'}}><LeftSideBar/></div>
                 <div className='col-lg-7'>
-                    <ChillerTab ShowPump={ShowPump} />
+                    <ChillerTab ShowPump={ShowPump} Pump={Pump} />
                 </div>
                 <div className='col-lg-3 col-md-6 col-sm-10 p-0'>
                     <div className='p-3 position-absolute' style={{height:'726px', maxWidth:'380px' , color: `${Colors.text1}`, background: `${Colors.contanierBg}`, boxShadow: `${Colors.shadow}`, borderRadius: 20 }}>

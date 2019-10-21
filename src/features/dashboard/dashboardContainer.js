@@ -12,11 +12,21 @@ const DashboardContainer = () => {
             <NavBar />
             <div className='container-fluid'>
                 <div className='row'>
-                    <div className='p-4 col-sm-12 col-lg-2 col-md-12' style={{ zIndex: '4' }}><LeftSideBar /></div>
-                    <div className='col-lg-8 col-md-10 col-sm-12'><Chart /></div>
-                    <div className='col-lg-2 col-md-12 col-sm-12'><CriticalAlerts chillerName={alertChiller} /></div>
+                    <div className=''>
+                        <div className='p-4 ' style={{ zIndex: '4' }}><LeftSideBar /></div>
+
+                    </div>
+                    <div className='col-lg-10 justify-content-between'>
+                        <div className='row'>
+                            <div className='col-lg-9 col-md-10 col-sm-12'><Chart gradientStroke={'hsl(54,78%,72%)'}/></div>
+                            <div className='col-lg-3 col-md-12 col-sm-12'><CriticalAlerts chillerName={alertChiller} /></div>
+                        </div>
+
+                    </div>
                 </div>
-            </div>                    
+
+
+            </div>
         </div>
     )
 }

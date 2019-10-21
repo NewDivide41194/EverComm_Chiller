@@ -81,7 +81,7 @@ const ChillerTab = (props) => {
     setItem(!item);
     setName(name);
   }
-  const {ShowPump}=props
+  const {ShowPump,Pump}=props
   return (
     <div>
       <div className="row justify-content-between">
@@ -89,18 +89,15 @@ const ChillerTab = (props) => {
           <div className="d-flex align-items-center" style={{ fontSize: "20px" }}>
             <b className="p-2" style={{ color: `${Colors.text1}` }}>Chiller</b>
             <i className="fa fa-circle p-1" style={{ color: `${Colors.on}`, fontSize: "12px" }}></i>
-            <div className="ml-3 px-2 rounded" style={{ cursor: "pointer", fontSize: "12px", color: `${Colors.text2}`, border: `1px solid ${Colors.text2}` }} onClick={ShowPump}>
+            <div className="ml-3 px-2 rounded" style={{ cursor: "pointer", fontSize: "12px", color: `${Pump?Colors.text1:Colors.text2}`, border: `1px solid ${Pump?Colors.text1:Colors.text2}` }} onClick={ShowPump}>
               Pump1
            </div>
           </div>
           {
             !Tab1 &&
-            <div style={{ width: "100%", textAlign: "center" }}>
-              <div style={{ cursor: 'pointer', backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : 'rgba(255, 255, 255, .1)'}`, borderRadius: 15, padding: 5 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
-                {window.innerWidth <= 800 ?
-                  <i className="fa fa-user" style={{ color: 'white', fontSize: '12px' }} />
-                  : <span style={{ color: 'white' }}>{name}<i className="fa fa-sort-down" /></span>
-                }
+            <div style={{ width: "75%", textAlign: "center" }}>
+              <div style={{ cursor: 'pointer', backgroundColor: `${hov2 ? 'rgba(201, 76, 76, 0)' : 'rgba(255, 255, 255, .1)'}`, borderRadius: 5, padding: 5 }} onMouseOver={MouseOver2} onMouseOut={MouseOver2} onClick={clickprofile}>
+                  <span style={{ color: 'white' }}>{name}<i className="fa fa-sort-down pl-2" /></span>
               </div>
               {item &&
                 <div className='mt-2' style={{ width: '200px', background: 'white', fontSize: '12pt', textAlign: 'left', position: 'absolute', borderRadius: 10, zIndex: 3 }}>

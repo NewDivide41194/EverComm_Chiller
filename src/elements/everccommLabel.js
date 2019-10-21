@@ -33,10 +33,11 @@ export const EverCommValueText = (props) => {
 }
 
 export const EverCommLink = (props) => {
-    const { style,className, text, fontSize, color, to } = props
+    const { style,className, text, fontSize, color, to,withTopBorder,bold } = props
     const defaultStyle = {
         color: `${color === undefined ? Colors.text1 : color}`, fontSize: `${fontSize === undefined ? '14px' : `${fontSize}`}`,
-        textDecoration: 'none'
+        fontWeight: `${bold === undefined ? 'normal' : 'bold'}`,
+        textDecoration: 'none', borderTop: `${withTopBorder===undefined?'none':`1px solid ${Colors.text2}`}`
     }
     const userStyle = style === undefined ? {} : style
     return (

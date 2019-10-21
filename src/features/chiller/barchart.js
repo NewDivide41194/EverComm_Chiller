@@ -134,7 +134,7 @@ const consumptionOne = [
 ]
 const barChart =(props)=>{
     return(
-        <div>
+        <div className='pt-4'>
         <ResponsiveContainer height={286}>
         <BarChart width={600} height={300} data={props.tabname === "2" ? (props.name === "Efficiency" ? epreday : props.name === "Cooling Capacity" ? coolingPreday : props.name === "Power Loading" ? loadingPreday : consumptionPreday) : props.tabname === "3" ? 
         (props.name === "Efficiency" ? esevenday : props.name === "Cooling Capacity" ? coolingSevenday : props.name === "Power Loading" ? loadingSevenday : consumptionSevenday)  : (props.name === "Efficiency" ? eone : props.name === "Cooling Capacity" ?

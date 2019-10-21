@@ -4,8 +4,8 @@ import { EverCommValueText, EvercommLabel, EverCommLink } from '../../elements/e
 
 
 const DashboardChartTitle = () => {
-    const ActiveTab = { borderBottom: `2px solid ${Colors.text3}`, textAlign: 'center',height:'25px' }
-    const InactiveTab = {textAlign: 'center'}
+    const ActiveTab = { borderBottom: `2px solid ${Colors.text3}`, textAlign: 'center', height: '25px' }
+    const InactiveTab = { textAlign: 'center' }
 
     const storage = JSON.parse(localStorage.getItem('plants'))
     return (
@@ -15,9 +15,8 @@ const DashboardChartTitle = () => {
                 <EvercommLabel text={`${storage.chiller} Chillers`} fontSize={'16px'} noFullWidth />
             </div>
             <div className='d-flex flex-row'>
-                <div style={{InactiveTab}}>
-                <EverCommLink text={'Pre 24h'} className='pr-4' color={`${Colors.text2}`} />
-
+                <div style={{ InactiveTab }}>
+                    <EverCommLink text={'Pre 24h'} className='pr-4' color={`${Colors.text2}`} />
                 </div>
 
                 <div style={ActiveTab}>
