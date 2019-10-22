@@ -8,3 +8,4 @@ export const contanierBg = 'rgb(32, 43, 96)';
 export const leftSideBar = 'rgb(40, 53, 115)';
 export const loginText = 'rgb(102, 102, 115)'
 export const FontAwsomeColor ='rgb(14,184,1)';
+export const DetatilColor = 'rgb(31,40,83)'

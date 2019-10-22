@@ -1,0 +1,19 @@
+.sidebarIcon{
+    display: none
+}
+@media screen and (max-width: 990px) {
+    .flexLists {display: none;}
+    .sidebarIcon {
+     display: block;
+    }
+  }
+  
+  @media screen and (max-width: 990px) {
+   
+    
+    .flexLists.responsive .d-flex {
+    
+      display: block;
+      
+    }
+  }

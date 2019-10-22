@@ -1,7 +1,5 @@
-import React, {useState} from 'react'
+import React from 'react'
 import * as Colors from '../assets/everCommColor'
-import ChillerEfficiency from './chillerefficiency'
-
 const ActiveStyle=()=>{
   return {
     outline:"none",
@@ -15,7 +13,6 @@ const ActiveStyle=()=>{
     color:`${Colors.text1}`
   }
 }
-
 const NotActiveStyle=()=>{
   return {
     outline:"none",
@@ -26,59 +23,24 @@ const NotActiveStyle=()=>{
     fontSize:"12px"
   }
 }
-
 const Button =()=>{
-  const [Tab1, setTab1] = useState(true)
-  const [Tab2, setTab2] = useState(false)
-  const [Tab3, setTab3] = useState(false)
-  const [Tab4, setTab4] = useState(false)
-
-  const clickTab = arg => {
-    const myelement = <ChillerEfficiency tabname="Ford" />;
-    if(arg === '1'){
-      setTab1(true);
-      setTab2(false);
-      setTab3(false);
-      setTab4(false);
-    }
-    else if(arg === '2'){
-      setTab1(false);
-      setTab2(true);
-      setTab3(false);
-      setTab4(false);
-    }
-    else if(arg === '3'){
-      setTab1(false);
-      setTab2(false);
-      setTab3(true);
-      setTab4(false);
-    }
-    else{
-      setTab1(false);
-      setTab2(false);
-      setTab3(false);
-      setTab4(true);
-    }
-  }
-
-
     return(
         <div>
-      <button type="button" onClick={(e) => clickTab("1",e)}
+      <button type="button"
        className="btn btn-sm mx-1"
-        style={Tab1 ? ActiveStyle() : NotActiveStyle()}><b>Real-time</b>
+        style={ActiveStyle()}><b>Real-time</b>
         </button>
-        <button type="button" onClick={(e) => clickTab("2",e)}
+        <button type="button"
        className="btn btn-sm mx-1"
-       style={Tab2 ? ActiveStyle() : NotActiveStyle()}><b>Prev Day</b>
+        style={NotActiveStyle()}><b>Prev Day</b>
         </button>
-        <button type="button" onClick={(e) => clickTab("3",e)}
+        <button type="button"
        className="btn btn-sm mx-1"
-       style={Tab3 ? ActiveStyle() : NotActiveStyle()}><b>7D</b>
+        style={NotActiveStyle()}><b>7D</b>
         </button>
-        <button type="button" onClick={(e) => clickTab("4",e)}
+        <button type="button"
        className="btn btn-sm mx-1"
-       style={Tab4 ? ActiveStyle() : NotActiveStyle()}><b>1M</b>
+        style={NotActiveStyle()}><b>1M</b>
         </button>
       </div>
     )
